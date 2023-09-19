@@ -1,0 +1,22 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB-2.x
+    type: influxdb
+    access: proxy
+    orgId: 1
+    url: http://influxdb:8086
+    database: mybucket  # this refers to the bucket in InfluxDB 2.x
+    user: myuser
+    password: mypassword
+    basicAuth: false
+    isDefault: true
+    jsonData:
+      authType: "credentials"
+      defaultBucket: mybucket
+      maxSeries: 0
+      organization: myorg
+      type: influxdb-v2
+      version: "Flux"  # explicitly setting query language to Flux
+    secureJsonData:
+      token: mytoken
